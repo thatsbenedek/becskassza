@@ -1,0 +1,57 @@
+#balance-line {
+    text-align: right;
+}
+
+dl, dd {
+    margin-bottom: 0;
+}
+
+.main {
+    padding: 2%;
+    margin: 0;
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+h1 {
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+.btn-link {
+    padding: 0;
+}
+
+.btn-link:hover {
+    text-decoration: none;
+}
+
+.material-icons {
+    vertical-align: sub;
+}
+
+.navbar-centered {
+    margin-left: 2.2%;
+    margin-right: 2.2%;
+}
+
+.footer {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+@media (min-width: 1280px) {
+    .centered {
+        margin-left: 25% !important;
+        margin-right: 25% !important;
+    }
+
+    .navbar-centered {
+        margin-left: 27.5% !important;
+        margin-right: 27.5% !important;
+    }
+}

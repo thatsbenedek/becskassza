@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="styles.css" type="text/css">
+		<link rel="shortcut icon" href="icons/baseline_credit_card_black_48dp.png"/>
+		<title>Becskassza</title>
+
+		<link rel="manifest" href="manifest.json">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="application-name" content="Becskassza">
+		<meta name="apple-mobile-web-app-title" content="Becskassza">
+		<meta name="theme-color" content="#343a40">
+		<meta name="msapplication-navbutton-color" content="#343a40">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="msapplication-starturl" content="/index.html">
+		<link rel="icon" type="image/png" sizes="48x48" href="icons/baseline_credit_card_black_48.png">
+		<link rel="apple-touch-icon" type="image/png" sizes="48x48" href="icons/baseline_credit_card_black_48.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="icons/baseline_credit_card_black_96.png">
+		<link rel="apple-touch-icon" type="image/png" sizes="96x96" href="icons/baseline_credit_card_black_96.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="icons/baseline_credit_card_black_192.png">
+		<link rel="apple-touch-icon" type="image/png" sizes="192x192" href="icons/baseline_credit_card_black_192.png">
+		<link rel="icon" type="image/png" sizes="256x256" href="icons/baseline_credit_card_black_256.png">
+		<link rel="apple-touch-icon" type="image/png" sizes="256x256" href="icons/baseline_credit_card_black_256.png">
+		<link rel="icon" type="image/png" sizes="512x512" href="icons/baseline_credit_card_black_512.png">
+		<link rel="apple-touch-icon" type="image/png" sizes="512x512" href="icons/baseline_credit_card_black_512.png">
+  	</head>
+  	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+			<a class="navbar-brand navbar-centered" href=""><i class="material-icons">credit_card</i>Becskassza</a>
+		</nav>
+		<div class="row main centered">
+			<div class="col-12 col-sm-7">
+				<h1>Fogyassz</h1>
+				<div class="row">
+					<div class="col-6" id="products-first">
+					</div>
+					<div class="col-6" id="products-second">
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-5">
+				<h1>Fizess</h1>
+				<div class="alert" role="alert" id="balance-alert">
+					<dl class="row">
+						<dd class="col-3">Egyenleg</dd>
+						<dd class="col-9" id="balance-line"><strong id="balance"></strong></dd>
+					</dl>
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text">HUF</span>
+					</div>
+					<input type="number" class="form-control" placeholder="Összeg" aria-label="Összeg" aria-describedby="btn-pay" id="amount-pay">
+					<div class="input-group-append">
+						<button class="btn btn-outline-primary" type="button" id="btn-pay">Befizet</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-expand navbar-light bg-light fixed-bottom footer">
+			<a class="text-muted navbar-centered" href="https://github.com/thatsbenedek/becskassza/issues">Hibajelentés</a>
+		</nav>
+		<script src="scripts.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  	</body>
+</html>
