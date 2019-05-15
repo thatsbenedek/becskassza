@@ -21,10 +21,12 @@ this.addEventListener('install', async function() {
     ]);
 });
 
-self.addEventListener('fetch', function(event) { 
-    event.respondWith(
-    	caches.match(event.request).then(function(response) {
-        	return response || fetch(event.request);
-      	})
-    );
+self.addEventListener('fetch', function(event) {
+    if(!navigator.onLine) {
+        event.respondWith(
+            caches.match(event.request).then(function(response) {
+                return response || fetch(event.request);
+              })
+        );
+    }
 });
