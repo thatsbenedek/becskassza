@@ -2,7 +2,8 @@ const items = [
     {name:'Üveges sör', price:269},
     {name:'Túró rudi', price:99},
     {name:'Tejsüti', price:149},
-    {name:'Kúró Rudi (Xtra large)', price:199}
+    {name:'Kúró Rudi (Xtra large)', price:199},
+    {name:'Arizonás üdítő', price:149}
 ];
 
 let balance = 0;
