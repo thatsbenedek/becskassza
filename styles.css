@@ -9,12 +9,12 @@ dl, dd {
 .main {
     padding: 2%;
     margin: 0;
-    padding-top: 60px;
+    padding-top: 90px;
     padding-bottom: 50px;
 }
 
-h1 {
-    padding-top: 15px;
+h4 {
+    padding-top: 20px;
     padding-bottom: 5px;
 }
 
@@ -46,12 +46,12 @@ h1 {
 
 @media (min-width: 1280px) {
     .centered {
-        margin-left: 25% !important;
-        margin-right: 25% !important;
+        margin-left: 35% !important;
+        margin-right: 35% !important;
     }
 
     .navbar-centered {
-        margin-left: 27.5% !important;
-        margin-right: 27.5% !important;
+        margin-left: 37.5% !important;
+        margin-right: 37.5% !important;
     }
 }
