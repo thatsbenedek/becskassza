@@ -9,7 +9,7 @@ dl, dd {
 .main {
     padding: 2%;
     margin: 0;
-    padding-top: 90px;
+    padding-top: 85px;
     padding-bottom: 50px;
 }
 
@@ -40,18 +40,18 @@ h4 {
 }
 
 .footer {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
+    padding-top: .3rem !important;
+    padding-bottom: .5rem !important;
 }
 
 @media (min-width: 1280px) {
     .centered {
-        margin-left: 35% !important;
-        margin-right: 35% !important;
+        margin-left: 28% !important;
+        margin-right: 28% !important;
     }
 
     .navbar-centered {
-        margin-left: 37.5% !important;
-        margin-right: 37.5% !important;
+        margin-left: 30.6% !important;
+        margin-right: 30.6% !important;
     }
 }
