@@ -6,6 +6,7 @@ const items = [
 ];
 
 let balance = 0;
+const vibrationLength = 15;
 
 function displayItems() {
     const firstColunm = document.getElementById('products-first');
@@ -44,6 +45,7 @@ function displayBalance() {
 
 function pay() {
     if (document.getElementById('amount-pay').value > 0) {
+        navigator.vibrate(vibrationLength);
         let amount = document.getElementById('amount-pay').value;
         balance += parseInt(amount);
         localStorage.balance = balance;
@@ -56,6 +58,7 @@ function setItemListeners() {
     let counter = 0;
     items.forEach(function(item) {
         document.getElementById(counter).addEventListener('click', function(){
+            navigator.vibrate(vibrationLength);
             balance -= parseInt(items[parseInt(event.target.id)].price);
             localStorage.balance = balance;
             displayBalance();
