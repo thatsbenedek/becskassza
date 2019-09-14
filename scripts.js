@@ -48,6 +48,7 @@ function pay() {
         balance += parseInt(amount);
         localStorage.balance = balance;
         displayBalance();
+        document.getElementById('amount-pay').value = '';
     }
 }
 
