@@ -6,7 +6,7 @@ const items = [
 ];
 
 let balance = 0;
-const vibrationLength = 15;
+const vibrationLength = 100;
 
 function displayItems() {
     const firstColunm = document.getElementById('products-first');
