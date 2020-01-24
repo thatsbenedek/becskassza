@@ -8,7 +8,9 @@ const items = [
 ];
 
 let balance = 0;
+let history = [];
 const vibrationLength = 100;
+const historyDisplayLimit = 10;
 
 function displayItems() {
     const firstColunm = document.getElementById('products-first');
@@ -45,13 +47,60 @@ function displayBalance() {
     }
 }
 
+function displayHistory() {
+    const table = document.getElementById('history-table');
+    table.innerHTML = '';
+
+    const historyEventCount = history.length;
+    let historyEventDisplayLocalLimit = historyEventCount - historyDisplayLimit;
+    if (historyEventDisplayLocalLimit < 0)
+        historyEventDisplayLocalLimit = 0;
+
+    for(let i = historyEventCount-1; i >= historyEventDisplayLocalLimit; i--) {
+        let item = history[i];
+        let row = '<tr class="history-event-' + item.type + '">';
+        row += '<td class="timestamp">' + formatDate(item.timestamp) + '</td>';
+        row += '<td class="comment">' + item.comment + '</td class="comment">';
+        row += '<td class="amount">HUF ' + (item.type == "pay" ? "+" : "-") + item.amount + '</td class="amount">';
+        row += '</tr>';
+        table.insertAdjacentHTML('beforeend', row);
+    }
+}
+
+function formatDate(timestamp) {
+    let dateObj = new Date(0);
+    dateObj.setUTCSeconds(timestamp/1000);
+    let str = dateObj.getFullYear() + '. ';
+    let m = dateObj.getMonth() + 1;
+    str += ((m < 10) ? '0' : '') + m + '. ';
+    let d = dateObj.getDate();
+    str += ((d < 10) ? '0' : '') + d + '. ';
+    let h = dateObj.getHours();
+    str += ((h < 10) ? '0' : '') + h + ':';
+    let i = dateObj.getMinutes();
+    str += ((i < 10) ? '0' : '') + i;
+    return str;
+}
+
+function addHistoryEvent(type, amount, comment) {
+    history.push({
+        'type': type,
+        'amount': amount,
+        'comment': comment,
+        'timestamp': (new Date()).getTime()
+    });
+    localStorage.history = JSON.stringify(history);
+}
+
 function pay() {
     if (document.getElementById('amount-pay').value > 0) {
         navigator.vibrate(vibrationLength);
         let amount = document.getElementById('amount-pay').value;
         balance += parseInt(amount);
         localStorage.balance = balance;
+        addHistoryEvent('pay', amount, 'befizetés');
         displayBalance();
+        displayHistory();
         document.getElementById('amount-pay').value = '';
     }
 }
@@ -61,9 +110,12 @@ function setItemListeners() {
     items.forEach(function(item) {
         document.getElementById(counter).addEventListener('click', function(){
             navigator.vibrate(vibrationLength);
-            balance -= parseInt(items[parseInt(event.target.id)].price);
+            let itemData = items[parseInt(event.target.id)];
+            balance -= parseInt(itemData.price);
             localStorage.balance = balance;
+            addHistoryEvent('buy', itemData.price, itemData.name);
             displayBalance();
+            displayHistory();
         });
         counter++;
     });
@@ -87,8 +139,16 @@ function startup() {
         localStorage.balance = balance;
     }
 
+    if (localStorage.history) {
+        history = JSON.parse(localStorage.history);
+    } else {
+        localStorage.history = JSON.stringify(history);
+    }
+   
+
     displayItems();
     displayBalance();
+    displayHistory();
 
     document.getElementById('btn-pay').addEventListener('click', pay);
     setItemListeners();
