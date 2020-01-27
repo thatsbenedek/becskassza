@@ -2,36 +2,6 @@
     text-align: right;
 }
 
-#history {
-    margin-top: 30px;
-}
-
-#history-table {
-    width: 100%;
-}
-
-#history-table td.timestamp {
-    width: 50%;
-}
-
-#history-table td.comment {
-    width: 30%;
-}
-
-#history-table td.amount {
-    width: 20%;
-    text-align: right;
-    font-weight: bold;
-}
-
-#history-table tr.history-event-pay td.amount {
-    color: darkgreen;
-}
-
-#history-table tr.history-event-buy td.amount {
-    color: darkred;
-}
-
 dl, dd {
     margin-bottom: 0;
 }
