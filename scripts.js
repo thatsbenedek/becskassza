@@ -1,6 +1,6 @@
 const items = [
     {name:'Üveges sör', price:269},
-    {name:'Cider', price:329},
+    {name:'Cider', price:369},
     {name:'Normál rudi', price:119},
     {name:'Óriás rudi', price:169},
     {name:'Guru', price:199},
